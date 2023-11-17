@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://tricycle.org/wp-content/uploads/2021/08/july-haiku-challenge-1024x768.jpg");
+  background-size: cover;
+  color: white;
+}
+.haikuMetaData {
+  font-size: 16px;
+}
+/* .inputTopic {
+  height: 50px;
+  width: 50px;
+  background-color: aquamarine;
+} */
