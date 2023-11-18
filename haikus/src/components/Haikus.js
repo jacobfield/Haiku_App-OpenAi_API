@@ -60,12 +60,16 @@ export function Haikus({ haikuData }) {
       </div>
       <form className="inputTopic" onSubmit={handleSubmit}>
         <input
+          className="inputBox"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder="Choose a topic"
+          placeholder="Search the archives..."
         ></input>
-        <button type="submit">Submit</button>
+        <br></br>
+        <button className="button" type="submit">
+          Request
+        </button>
       </form>
       {/* {haikuData.map((haiku) => (
         <Haiku

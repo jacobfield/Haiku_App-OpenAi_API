@@ -1,10 +1,10 @@
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://www.myfreetextures.com/wp-content/uploads/2011/06/a-worn-parchment-paper-background-texture-900x675.jpg");
+  /* margin: 5rem auto auto auto; */
+  font-family: Palatino Linotype, Georgia, Garamond;
+  background-image: url("https://www.everwallpaper.co.uk/cdn/shop/products/misty-forest-wallpaper-mural-plain.jpg?v=1650522432");
   background-size: cover;
   background-position: center;
-  color: green;
+  color: #c3ccbd;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -13,14 +13,46 @@ body {
 .haikusAll {
   margin: 5rem;
   max-width: 90vw;
+  margin: 19rem auto auto auto;
 }
 .haikuDiv {
   max-width: 30rem;
 }
 .displayText {
   font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(3, 4, 4, 1);
 }
 .inputTopic {
-  position: flex;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.inputBox {
+  text-align: center;
+  background-color: #748579;
+  border: none;
+  border-radius: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.inputBox::placeholder {
+  color: #263626; /* Set the desired color for the placeholder text */
+}
+.button {
+  background-color: #8b9586;
+  color: #263626;
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  background-color: #586d3d; /* Change to your preferred hover background color */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
 }
