@@ -13,14 +13,14 @@ body {
 .haikusAll {
   margin: 5rem;
   max-width: 90vw;
-  margin: 17rem auto auto auto;
+  margin: 19rem auto auto auto;
 }
 .haikuDiv {
   width: 20rem;
 }
 .displayText {
   font-size: 30px;
-  text-shadow: 2px 2px 4px rgba(3, 4, 4, 1);
+  text-shadow: 2px 2px 4px rgba(3, 4, 4, 15);
   text-align: center;
 }
 .inputTopic {
