@@ -11,14 +11,16 @@ export function Haikus({ haikuData }) {
     setInputValue(event.target.value);
   }
   // function to handle form submission
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    let haikuTopic = inputValue;
+    let inputTopic = inputValue;
     // setGeneratedHaiku(newHaiku);
-    setGeneratedHaiku(fetchHaiku(haikuTopic));
+    // setGeneratedHaiku(fetchHaiku(inputTopic).gtpResponse);
+    let newHaiku = await fetchHaiku(inputTopic);
+    setGeneratedHaiku(newHaiku);
     console.log(generatedHaiku);
   }
-
+  const defaultText = "On which topic do you seek ancient wisdom?";
   return (
     <section className="haikusAll">
       <form className="inputTopic" onSubmit={handleSubmit}>
@@ -30,14 +32,15 @@ export function Haikus({ haikuData }) {
         ></input>
         <button type="submit">Submit</button>
       </form>
-      {haikuData.map((haiku) => (
+      <p>{!generatedHaiku ? defaultText : generatedHaiku}</p>
+      {/* {haikuData.map((haiku) => (
         <Haiku
           key={haiku.id}
           haikuData={haiku}
           generatedHaiku={generatedHaiku}
           handleSubmit={handleSubmit}
         />
-      ))}
+      ))} */}
       <img
         alt="moon and sun tarot"
         src="https://thumbs.dreamstime.com/b/mystical-drawing-sun-face-moon-crescent-moon-background-tarot-card-magic-boho-illustration-golden-sun-208609708.jpg"

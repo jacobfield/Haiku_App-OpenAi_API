@@ -20,7 +20,7 @@ export async function fetchHaiku(haikuTopic) {
   });
   let gtpResponse = completion.choices[0].message.content;
   // console.log(completion.choices[0]);
-  console.log(gtpResponse);
+  // console.log(gtpResponse);
   return gtpResponse;
 }
 
