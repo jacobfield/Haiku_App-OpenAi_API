@@ -24,19 +24,26 @@ export function Haikus({ haikuData }) {
     setTypewriterText("");
   }
   //
-  // typewriter effect
+  // typewriter UseEffect
   useEffect(() => {
+    // declaring the index
     let index = -1;
+    // setting the interval for the typewriter to render text
     const typingInterval = setInterval(() => {
-      setTypewriterText(
-        (prevtypewriterText) => prevtypewriterText + generatedHaiku[index]
-      );
+      // updating the typewriter text state previous typewriter Text
+      setTypewriterText((prevTypewriterText) => {
+        // ensuring that '.undefined' will not be rendered at the end of the typewriter string
+        const nextChar = generatedHaiku[index];
+        return nextChar !== undefined
+          ? prevTypewriterText + nextChar
+          : prevTypewriterText;
+      });
       index++;
-
+      // ending the typewrietypewriter effect
       if (index === generatedHaiku.length) {
         clearInterval(typingInterval);
       }
-    }, 75); // Adjust the timing as needed
+    }, 75); // setting the interval between character renders
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(typingInterval);
@@ -47,6 +54,7 @@ export function Haikus({ haikuData }) {
     <section className="haikusAll">
       <div className="haikuDiv">
         <p className="displayText">
+          {/* if generated haiku hasnt been set yet, display default text */}
           {!generatedHaiku ? defaultText : typewriterText}
         </p>
       </div>
