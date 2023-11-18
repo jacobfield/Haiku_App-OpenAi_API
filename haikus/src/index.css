@@ -1,15 +1,26 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://tricycle.org/wp-content/uploads/2021/08/july-haiku-challenge-1024x768.jpg");
+  background-image: url("https://www.myfreetextures.com/wp-content/uploads/2011/06/a-worn-parchment-paper-background-texture-900x675.jpg");
   background-size: cover;
-  color: white;
+  background-position: center;
+  color: green;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
-.haikuMetaData {
-  font-size: 16px;
+
+.haikusAll {
+  margin: 5rem;
+  max-width: 90vw;
 }
-/* .inputTopic {
-  height: 50px;
-  width: 50px;
-  background-color: aquamarine;
-} */
+.haikuDiv {
+  max-width: 30rem;
+}
+.displayText {
+  font-size: 30px;
+}
+.inputTopic {
+  position: flex;
+  justify-content: center;
+}

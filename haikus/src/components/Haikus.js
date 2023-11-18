@@ -23,6 +23,11 @@ export function Haikus({ haikuData }) {
   const defaultText = "On which topic do you seek ancient wisdom?";
   return (
     <section className="haikusAll">
+      <div className="haikuDiv">
+        <p className="displayText">
+          {!generatedHaiku ? defaultText : generatedHaiku}
+        </p>
+      </div>
       <form className="inputTopic" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -32,7 +37,6 @@ export function Haikus({ haikuData }) {
         ></input>
         <button type="submit">Submit</button>
       </form>
-      <p>{!generatedHaiku ? defaultText : generatedHaiku}</p>
       {/* {haikuData.map((haiku) => (
         <Haiku
           key={haiku.id}
@@ -41,10 +45,10 @@ export function Haikus({ haikuData }) {
           handleSubmit={handleSubmit}
         />
       ))} */}
-      <img
+      {/* <img
         alt="moon and sun tarot"
         src="https://thumbs.dreamstime.com/b/mystical-drawing-sun-face-moon-crescent-moon-background-tarot-card-magic-boho-illustration-golden-sun-208609708.jpg"
-      ></img>
+      ></img> */}
     </section>
   );
 }
