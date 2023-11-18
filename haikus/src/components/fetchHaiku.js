@@ -1,10 +1,9 @@
 import OpenAI from "openai";
-// import dotenv from "dotenv";
-// dotenv.config();
+import { openAiApiKey } from "../environmentVariables.js";
 
 // THIS APPEARS TO BE BAD - SHOULD PROBABLY NOT ALLOW IT
 const openai = new OpenAI({
-  apiKey: 
+  apiKey: openAiApiKey,
   dangerouslyAllowBrowser: true,
 });
 
@@ -25,4 +24,4 @@ export async function fetchHaiku(haikuTopic) {
   return gtpResponse;
 }
 
-fetchHaiku("tables");
+// fetchHaiku("tables");
