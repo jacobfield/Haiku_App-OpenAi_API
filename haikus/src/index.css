@@ -33,6 +33,7 @@ body {
   border: none;
   border-radius: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: #263626;
 }
 .inputBox::placeholder {
   color: #263626; /* Set the desired color for the placeholder text */
