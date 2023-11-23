@@ -2,6 +2,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_openAiApiKey,
+  dangerouslyAllowBrowser: true,
 });
 
 export async function fetchHaiku(haikuTopic) {
