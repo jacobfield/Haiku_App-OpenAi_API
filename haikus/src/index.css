@@ -68,7 +68,7 @@ body {
   left: 45%;
   text-align: center; */
   position: absolute;
-  top: 100%;
+  top: 99%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
