@@ -1,10 +1,7 @@
 import OpenAI from "openai";
-import { openAiApiKey } from "../environmentVariables.js";
 
-// THIS APPEARS TO BE BAD - SHOULD PROBABLY NOT ALLOW IT
 const openai = new OpenAI({
-  apiKey: openAiApiKey,
-  dangerouslyAllowBrowser: true,
+  apiKey: process.env.REACT_APP_openAiApiKey,
 });
 
 export async function fetchHaiku(haikuTopic) {
