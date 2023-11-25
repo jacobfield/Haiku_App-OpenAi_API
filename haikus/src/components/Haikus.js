@@ -8,7 +8,7 @@ export function Haikus({ haikuData }) {
   const [inputValue, setInputValue] = useState("");
   const [generatedHaiku, setGeneratedHaiku] = useState("");
   const [typewriterText, setTypewriterText] = useState("");
-  //
+  const [isButtonDisabled, setisButtonDisabled] = useState(false);
   // function to handle input change
   function handleInputChange(event) {
     setInputValue(event.target.value);
@@ -17,11 +17,18 @@ export function Haikus({ haikuData }) {
   // function to handle form submission
   async function handleSubmit(event) {
     event.preventDefault();
-    let inputTopic = inputValue;
-    let newHaiku = await fetchHaiku(inputTopic);
-    setGeneratedHaiku(newHaiku);
-    console.log(generatedHaiku);
-    setTypewriterText("");
+    if (!isButtonDisabled) {
+      setisButtonDisabled(true);
+
+      let newHaiku = await fetchHaiku(inputValue);
+      setGeneratedHaiku(newHaiku);
+      console.log(generatedHaiku);
+      setTypewriterText("");
+      //set button cooldown. Waits 7 seconds, then runs code within the function, re-enabling the button
+      setTimeout(() => {
+        setisButtonDisabled(false);
+      }, 6500);
+    }
   }
   //
   // typewriter UseEffect
@@ -58,7 +65,17 @@ export function Haikus({ haikuData }) {
           {!generatedHaiku ? defaultText : typewriterText}
         </p>
       </div>
-      <form className="inputTopic" onSubmit={handleSubmit}>
+      <form
+        className="inputTopic"
+        onSubmit={handleSubmit}
+        // handle Submit if enter is pressed
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            handleSubmit(event);
+          }
+        }}
+      >
         <input
           className="inputBox"
           type="text"
