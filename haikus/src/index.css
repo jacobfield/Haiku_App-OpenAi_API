@@ -1,7 +1,7 @@
 body {
   /* margin: 5rem auto auto auto; */
   font-family: Palatino Linotype, Georgia, Garamond;
-  background-image: url("https://www.everwallpaper.co.uk/cdn/shop/products/misty-forest-wallpaper-mural-plain.jpg?v=1650522432");
+  background-image: url("../public/misty-forest.jpg");
   background-size: cover;
   background-position: center;
   color: #c3ccbd;
